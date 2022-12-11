@@ -16,4 +16,4 @@ youtube.sql
 
 4ta base de datos:
 spotify.jpg
-spotufy.sql
+spotify.sql
