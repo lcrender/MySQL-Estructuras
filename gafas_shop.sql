@@ -57,11 +57,6 @@ CREATE TABLE `gafas_color_vidrio` (
   `color` varchar(128)  NOT NULL,
   PRIMARY KEY (`id`)
 );
-CREATE TABLE `gafas_cristal` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `graduacion` varchar(128)  NOT NULL,
-  PRIMARY KEY (`id`)
-);
 CREATE TABLE `gafas_marca` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(128)  NOT NULL,
@@ -70,16 +65,11 @@ CREATE TABLE `gafas_marca` (
   KEY `fk_proveedor_idx` (`id_proveedor`),
   CONSTRAINT `fk_proveedor` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedores` (`id`)
 );
-CREATE TABLE `gafas_montura` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `montura` varchar(128)  NOT NULL,
-  PRIMARY KEY (`id`)
-);
 CREATE TABLE `gafas` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_marca` int NOT NULL,
-  `id_cristal` int DEFAULT NULL,
-  `id_montura` int DEFAULT NULL,
+  `graduacion` float DEFAULT NULL,
+  `id_montura` enum('flotante','pasta', 'metalica'),
   `id_color_montura` int DEFAULT NULL,
   `id_color_vidrio` int DEFAULT NULL,
   `precio` float DEFAULT NULL,
