@@ -69,7 +69,7 @@ CREATE TABLE `gafas` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_marca` int NOT NULL,
   `graduacion` float DEFAULT NULL,
-  `id_montura` enum('flotante','pasta', 'metalica'),
+  `montura` enum('flotante','pasta', 'metalica'),
   `id_color_montura` int DEFAULT NULL,
   `id_color_vidrio` int DEFAULT NULL,
   `precio` float DEFAULT NULL,

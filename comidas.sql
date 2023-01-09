@@ -90,23 +90,6 @@ CREATE TABLE `pedidos_detalles` (
   CONSTRAINT `fk_dpedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`),
   CONSTRAINT `fk_dproducto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
 );
-
-
-CREATE TABLE `carrito` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `id_cliente` int NOT NULL,
-  `id_producto` int NOT NULL,
-  `cantidad` int NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_producto_idx` (`id_producto`),
-  KEY `fk_cliente_idx` (`id_cliente`),
-  CONSTRAINT `fk_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`),
-  CONSTRAINT `fk_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`)
-);
-
-
-
 INSERT INTO `direcciones` VALUES (1,'Alem 232',1234,'Moron','Buenos Aires'),(2,'Rambla Juliana 322',88,'Barcelona','Barcelona'),(3,'Via Maria 2323',88,'Barcelona','Barcelona'),(4,'Maradona 99',121,'Las Toninas','Madrid');
 INSERT INTO `tiendas` VALUES (1,'Tienda Norte'),(2,'Tienda Sur');
 INSERT INTO `cat_productos` VALUES (1,'Bebidas'),(2,'Pizzas Napolitanas'),(3,'Pizzas Especiales'),(4,'Pizzas Integrales'),(5,'Hamburguesas');
@@ -115,4 +98,3 @@ INSERT INTO `empleados` VALUES (1,'Jorge','Mangone',3432,600232340,0),(2,'Dario'
 INSERT INTO `clientes` VALUES (1,'Jhony','Tolengo',1,32324433),(2,'Bruce','Lee',2,93939393),(3,'Enzo','Franchescoli',3,32432243),(4,'Lorenzo','Sanchez',4,34324324);
 INSERT INTO `pedidos` VALUES (1,1,'2022-10-10 20:22:22',1,2,1,2,'2022-10-10 20:23:23'),(2,1,'2022-10-11 20:22:22',0,NULL,1,1,'2022-11-10 20:23:23'),(3,2,'2021-10-10 20:22:22',0,NULL,1,1,'2022-10-11 20:23:23');
 INSERT INTO `pedidos_detalles` VALUES (1,2,5,6,30,1),(2,5,1,3,3,2),(3,3,4,4,16,3),(1,7,2,3,6,4);
-INSERT INTO `carrito` VALUES (1,1,1,4);
